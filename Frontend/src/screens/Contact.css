@@ -25,6 +25,12 @@
   margin: 1rem;
   border-radius: 15px;
   width: 300px;
+  height: 400px; /* Set a fixed height for uniformity */
+  transition: transform 0.3s ease; /* Add transition for smooth hover effect */
+}
+
+.box:hover {
+  transform: translateY(-10px); /* Lift the box on hover */
 }
 
 .profileImage {

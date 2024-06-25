@@ -2,6 +2,7 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import './Contact.css'; // Import the CSS file
 
 const Contact = () => {
   const teamMembers = [
@@ -44,29 +45,29 @@ const Contact = () => {
   ];
 
   return (
-    <div style={styles.container}>
+    <div className="container">
       <h2>Contact Us</h2>
-      <div style={styles.teamContainer}>
+      <div className="teamContainer">
         {teamMembers.map((member, index) => (
-          <div key={index} style={styles.memberContainer}>
-            <div style={styles.box}>
+          <div key={index} className="memberContainer">
+            <div className="box">
               <img
                 src={member.imageUrl}
                 alt={member.name}
-                style={styles.profileImage}
+                className="profileImage"
               />
-              <div style={styles.content}>
-                <div style={styles.nameRole}>
-                  <p style={styles.name}>{member.name}</p>
+              <div className="content">
+                <div className="nameRole">
+                  <p className="name">{member.name}</p>
                   <p>{member.role}</p>
                 </div>
 
-                <div style={styles.contact}>
+                <div className="contact">
                   <h3>Contact Me At</h3>
-                  <div style={styles.iconsContainer}>
+                  <div className="iconsContainer">
                     <a
                       href={member.linkedin}
-                      style={styles.iconLink}
+                      className="iconLink"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -78,7 +79,7 @@ const Contact = () => {
                     </a>
                     <a
                       href={member.github}
-                      style={styles.iconLink}
+                      className="iconLink"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -88,7 +89,10 @@ const Contact = () => {
                         style={{ color: "black" }}
                       />
                     </a>
-                    <a href={`mailto:${member.email}`} style={styles.iconLink}>
+                    <a
+                      href={`mailto:${member.email}`}
+                      className="iconLink"
+                    >
                       <FontAwesomeIcon
                         icon={faEnvelope}
                         size="2x"
@@ -104,61 +108,6 @@ const Contact = () => {
       </div>
     </div>
   );
-};
-
-const styles = {
-  container: {
-    padding: "2rem",
-    textAlign: "center",
-  },
-  teamContainer: {
-    display: "flex",
-    flexDirection: "row",
-    flexWrap: "wrap",
-    justifyContent: "center",
-    gap: "2rem",
-    marginTop: "2rem",
-  },
-  memberContainer: {
-    textAlign: "center",
-    marginBottom: "2rem",
-  },
-  box: {
-    boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.1)",
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    padding: "2rem",
-    margin: "1rem",
-    borderRadius: "15px",
-    width: "300px",
-  },
-  profileImage: {
-    width: "170px",
-    height: "170px",
-    borderRadius: "50%",
-    marginBottom: "0.5rem",
-  },
-  content: {
-    textAlign: "center",
-    marginTop: "1rem",
-  },
-  nameRole: {
-    marginBottom: "1rem",
-  },
-  iconsContainer: {
-    display: "flex",
-    justifyContent: "center",
-    gap: "1rem",
-  },
-  iconLink: {
-    margin: "0.5rem",
-  },
-  name: {
-    fontWeight: "bold",
-    marginBottom: "0.5rem",
-    fontSize: "1.2rem",
-  },
 };
 
 export default Contact;
