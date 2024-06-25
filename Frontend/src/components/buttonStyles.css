@@ -5,21 +5,21 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 60px;
-  gap: 15px;
-  padding: 10px 20px;
+  height: 66px; /* Increased by 10% */
+  gap: 16.5px; /* Increased by 10% */
+  padding: 11px 22px; /* Increased by 10% */
 }
 
 .bar h4 {
   border: 1px solid #FF7A01;
-  border-radius: 60px;
+  border-radius: 66px; /* Increased by 10% */
   font-weight: 500;
   color: #FF7A01;
   transition: all ease 0.4s;
   position: relative;
-  font-size: 14px;
+  font-size: 15.4px; /* Increased by 10% */
   overflow: hidden;
-  font-family: 'Montserrat', sans-serif; /* Changed font family */
+  font-family: 'Montserrat', sans-serif;
 }
 
 .bar h4::after {
@@ -46,17 +46,52 @@
   text-decoration: none;
   position: relative;
   z-index: 9;
-  font-size: 13px; /* Smaller font size */
-  padding: 10px 20px; /* Adjusted padding */
+  font-size: 14.3px; /* Increased by 10% */
+  padding: 11px 22px; /* Increased by 10% */
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0; /* Adjusted margin to center text */
-  font-weight: 600; /* Bolder text */
-  font-family: 'Montserrat', sans-serif; /* Changed font family */
+  margin: 0;
+  font-weight: 600;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .bar h4 button:hover {
   color: white;
+}
+
+/* Media Queries for Responsiveness */
+@media screen and (max-width: 768px) {
+  .bar {
+    height: 55px;
+    gap: 12px;
+    padding: 8px 16px;
+  }
+
+  .bar h4 {
+    font-size: 13.2px; /* Adjusted for smaller screens */
+  }
+
+  .bar h4 button {
+    font-size: 12.1px; /* Adjusted for smaller screens */
+    padding: 8px 16px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .bar {
+    height: 44px;
+    gap: 8px;
+    padding: 6px 12px;
+  }
+
+  .bar h4 {
+    font-size: 11px; /* Further adjusted for mobile screens */
+  }
+
+  .bar h4 button {
+    font-size: 10px; /* Further adjusted for mobile screens */
+    padding: 6px 12px;
+  }
 }
