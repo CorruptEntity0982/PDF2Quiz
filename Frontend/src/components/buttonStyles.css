@@ -5,8 +5,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 66px; /* Increased by 10% */
-  gap: 16.5px; /* Increased by 10% */
+  height: 66px; 
+  gap: 16.5px; 
   padding: 11px 22px; /* Increased by 10% */
 }
 
@@ -19,7 +19,7 @@
   position: relative;
   font-size: 15.4px; /* Increased by 10% */
   overflow: hidden;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Helvetica", sans-serif;
 }
 
 .bar h4::after {
@@ -46,22 +46,21 @@
   text-decoration: none;
   position: relative;
   z-index: 9;
-  font-size: 14.3px; /* Increased by 10% */
-  padding: 11px 22px; /* Increased by 10% */
+  font-size: 14.3px; 
+  padding: 11px 22px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0;
-  font-weight: 600;
-  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  font-family: "Helvetica", sans-serif;
 }
 
 .bar h4 button:hover {
   color: white;
 }
 
-/* Media Queries for Responsiveness */
 @media screen and (max-width: 768px) {
   .bar {
     height: 55px;
@@ -70,11 +69,11 @@
   }
 
   .bar h4 {
-    font-size: 13.2px; /* Adjusted for smaller screens */
+    font-size: 13.2px; 
   }
 
   .bar h4 button {
-    font-size: 12.1px; /* Adjusted for smaller screens */
+    font-size: 12.1px; 
     padding: 8px 16px;
   }
 }
@@ -87,11 +86,11 @@
   }
 
   .bar h4 {
-    font-size: 11px; /* Further adjusted for mobile screens */
+    font-size: 11px; 
   }
 
   .bar h4 button {
-    font-size: 10px; /* Further adjusted for mobile screens */
+    font-size: 10px; 
     padding: 6px 12px;
   }
 }
