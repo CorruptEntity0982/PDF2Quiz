@@ -1,9 +1,12 @@
+/* Ensure to include the Google Font link in your HTML for Montserrat or Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&family=Poppins:wght@500;600&display=swap');
+
 .bar {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 60px;  
-  gap: 15px;    
+  height: 60px;
+  gap: 15px;
   padding: 10px 20px;
 }
 
@@ -14,10 +17,9 @@
   color: #FF7A01;
   transition: all ease 0.4s;
   position: relative;
-  font-size: 14px;  
+  font-size: 14px;
   overflow: hidden;
-  
-
+  font-family: 'Montserrat', sans-serif; /* Changed font family */
 }
 
 .bar h4::after {
@@ -30,7 +32,6 @@
   bottom: -100%;
   border-radius: 50%;
   transition: all ease 0.3s;
-  
 }
 
 .bar h4:hover::after {
@@ -39,21 +40,21 @@
 }
 
 .bar h4 button {
-  color: rgb(19, 18, 18); 
+  color: rgb(19, 18, 18);
   background: none;
   border: none;
   text-decoration: none;
   position: relative;
   z-index: 9;
-  font-size: 17px; 
-  padding-inline: 10px 70px;  
+  font-size: 13px; /* Smaller font size */
+  padding: 10px 20px; /* Adjusted padding */
   cursor: pointer;
-  display: flex; 
-  align-items: center; 
-  justify-content: center; 
-  margin-bottom: 10px;
-  margin-left: 48px;
-  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0; /* Adjusted margin to center text */
+  font-weight: 600; /* Bolder text */
+  font-family: 'Montserrat', sans-serif; /* Changed font family */
 }
 
 .bar h4 button:hover {
