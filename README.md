@@ -1,6 +1,8 @@
 # PDF2QUIZ
 Website to convert any pdf into a quiz.
 
+### Demo
+Click on the image to view the demo video.
 [![Video Title](https://github.com/CorruptEntity0982/PDF2Quiz/blob/main/Demo/Thumbnail.png)](https://youtu.be/fk9oTbGQaKE)
 
 ### Install dependancies to run backend
