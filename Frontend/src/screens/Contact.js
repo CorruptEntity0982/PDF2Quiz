@@ -6,24 +6,33 @@ import './Contact.css'; // Import the CSS file
 
 const Contact = () => {
   const teamMembers = [
+    // {
+    //   name: "Karan Kumar",
+    //   role: "Frontend Developer",
+    //   linkedin: "https://www.linkedin.com/in/karan-kumar-dev/",
+    //   github: "https://github.com/kumar-karan",
+    //   email: "karan.8080dev@gmail.com",
+    //   imageUrl:
+    //     "https://media.licdn.com/dms/image/D4E03AQFGeqAvTOXAIA/profile-displayphoto-shrink_800_800/0/1670087554519?e=1723075200&v=beta&t=B6HrEtOfWiD2F3HCkJsRW-_KcVpxG-ySH8CxOKoP1Uo",
+    // },
     {
-      name: "Karan Kumar",
-      role: "Frontend Developer",
-      linkedin: "https://www.linkedin.com/in/karan-kumar-dev/",
-      github: "https://github.com/kumar-karan",
-      email: "karan.8080dev@gmail.com",
+      name: "Nikolai Ferns",
+      role: "Backend Developer",
+      linkedin: "",
+      github: "",
+      email: "ferns.niko@gmail.com",
       imageUrl:
-        "https://media.licdn.com/dms/image/D4E03AQFGeqAvTOXAIA/profile-displayphoto-shrink_800_800/0/1670087554519?e=1723075200&v=beta&t=B6HrEtOfWiD2F3HCkJsRW-_KcVpxG-ySH8CxOKoP1Uo",
+        "",
     },
-    {
-      name: "Sakshi Bhalla",
-      role: "Design lead, Frontend Developer",
-      linkedin: "https://www.linkedin.com/in/sakshibhalla0/s",
-      github: "https://github.com/SakshiBhalla77",
-      email: "sakshibhalla27@gmail.com",
-      imageUrl:
-        "https://media.licdn.com/dms/image/D5603AQFD4PL2oYUeMQ/profile-displayphoto-shrink_800_800/0/1703091450612?e=1723075200&v=beta&t=ZpuQfUz_ZUJMxJnLhWLeaydv-kiJS3X2kPE25YwuINo",
-    },
+    // {
+    //   name: "Sakshi Bhalla",
+    //   role: "Design lead, Frontend Developer",
+    //   linkedin: "https://www.linkedin.com/in/sakshibhalla0/s",
+    //   github: "https://github.com/SakshiBhalla77",
+    //   email: "sakshibhalla27@gmail.com",
+    //   imageUrl:
+    //     "https://media.licdn.com/dms/image/D5603AQFD4PL2oYUeMQ/profile-displayphoto-shrink_800_800/0/1703091450612?e=1723075200&v=beta&t=ZpuQfUz_ZUJMxJnLhWLeaydv-kiJS3X2kPE25YwuINo",
+    // },
     {
       name: "Aryan Khatri",
       role: "Frontend Developer",
@@ -31,7 +40,7 @@ const Contact = () => {
       github: "https://github.com/ARYAN-khatri83",
       email: "aryan3kkhatri@gmail.com",
       imageUrl:
-        "https://media.licdn.com/dms/image/C5603AQFa_GWIC-cMYg/profile-displayphoto-shrink_800_800/0/1661828217376?e=1723680000&v=beta&t=LVre7Xcpj8BS-h-axvekCkOBVIty7Meuv6o0sP77Atk",
+        "https://media.licdn.com/dms/image/v2/C5603AQFa_GWIC-cMYg/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1661828217376?e=1732752000&v=beta&t=H9A1wy4mWfJDIZzKtUIfiE58CX7gfraUbONobkQBLcc",
     },
     {
       name: "Shashank Dubey",
@@ -40,7 +49,7 @@ const Contact = () => {
       github: "https://github.com/CorruptEntity0982",
       email: "shashank02.dubey@gmail.com",
       imageUrl:
-        "https://media.licdn.com/dms/image/D5603AQHOp6CSHVXhMw/profile-displayphoto-shrink_800_800/0/1718447406884?e=1724284800&v=beta&t=U9cDdZiuSn_VFnqRSUTehNXbWmwGN7Vr4BUs4Wk49ms",
+        "https://media.licdn.com/dms/image/v2/D5603AQHXM7Pr7U58RQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1721998193011?e=1732752000&v=beta&t=SW9z2xGWKdZxXXm7tPpKgzmYadxsCMGnhRbd0dPfSog",
     },
   ];
 
