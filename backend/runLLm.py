@@ -1,21 +1,27 @@
 import os
 import json
-import PyPDF2 as pdf
-from langchain.document_loaders import TextLoader
-from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain.embeddings.openai import OpenAIEmbeddings
-from langchain.vectorstores import Chroma
-from langchain.chains import RetrievalQA
-from langchain.chat_models import ChatOpenAI
 import subprocess
 from dotenv import load_dotenv
+from langchain_community.document_loaders import PyPDFLoader
+from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain_openai.embeddings import OpenAIEmbeddings
+from langchain_community.vectorstores import Chroma
+from langchain_community.chat_models import ChatOpenAI
+from langchain.chains import RetrievalQA
 
+# Load environment variables
 load_dotenv()
 os.environ['OPENAI_API_KEY'] = os.getenv('OPENAI_API_KEY')
 
+# Define paths
 current_dir = os.path.dirname(os.path.abspath(__file__))
 format_json_path = os.path.join(current_dir, 'formatJSON.py')
 folder_path = os.path.join(current_dir, 'uploads')
+project_root = os.path.abspath(os.path.join(current_dir, '..'))
+store_path = os.path.join(project_root, 'Frontend', 'src', 'response')
+response_json_path = os.path.join(store_path, 'response.txt')
+
+# Check for PDF files
 files = os.listdir(folder_path)
 pdf_files = [file for file in files if file.lower().endswith('.pdf')]
 if pdf_files:
@@ -25,35 +31,32 @@ else:
     print("No PDF files found in the folder.")
     exit()
 
+# Load and process the PDF content
 def getTextFromPDF() -> str:
-    with open(first_pdf_path, mode='rb') as contentFile:
-        convertedText = ""
-        pdf_reader = pdf.PdfReader(contentFile)
-        for i in range(len(pdf_reader.pages)):
-            page = pdf_reader.pages[i]
-            pageText = page.extract_text()
-            convertedText += pageText
-        
-        file_path = os.path.join(folder_path, 'loader.txt')
-        with open(file_path, "w+") as file:
-            file.write(convertedText)
-            file.seek(0)
-        return file_path
+    loader = PyPDFLoader(first_pdf_path)
+    documents = loader.load()
+    print("Number of documents found in the PDF:", len(documents))
+    return documents
 
-loader = TextLoader(getTextFromPDF())
-documents = loader.load()
+# Process documents
+documents = getTextFromPDF()
 text_splitter = RecursiveCharacterTextSplitter(chunk_size=200, chunk_overlap=100)
 texts = text_splitter.split_documents(documents)
+print("Number of text chunks after splitting:", len(texts))
+
+# Create embeddings and vector store
 embeddings = OpenAIEmbeddings()
 store = Chroma.from_documents(texts, embeddings, collection_name="Quiz-PDF")
+print("Vector store created successfully.")
 
-llm = ChatOpenAI(temperature=0.8, model="gpt-3.5-turbo")
+# Set up the language model and chain
+llm = ChatOpenAI(temperature=0.8, model="gpt-4-turbo")
 chain = RetrievalQA.from_chain_type(llm, retriever=store.as_retriever())
 
+# Prompt to generate MCQs
 prompt = """
-You are given a document consisting of questions and multiple choice options. 
-If you do not find the document in mcq format, to the best of your ability generate 20 mcq by yourself related to the context provided by the document.
-Return a response in JSON format. Each JSON object should contain the following fields:
+You are given a document, to the best of your ability generate 20 MCQs by yourself related to the text provided by the document.
+Return a response in valid JSON format. Each JSON object should contain the following fields:
 - question_id
 - question_text
 - options (list of options)
@@ -84,15 +87,14 @@ Example format of the response that is expected:
     "correct_option_id": 2
   },
 ]
-Strictly adhere to this format only. Give me the output in a single line, Do not return any other text apart for how the response is expected.
+Strictly adhere to this format only. Give me the output in a single line, Do not return any other text apart from how the response is expected.
+Return only valid JSON data.
 """
-response = chain.run(prompt)
-project_root = os.path.abspath(os.path.join(current_dir, '..'))
-store_path = os.path.join(project_root, 'Frontend', 'src', 'response')
-response_json_path = os.path.join(store_path, 'response.txt')
+
+response = chain.invoke(prompt)
+print("Response generated successfully.")
 with open(response_json_path, 'w') as json_file:
     json.dump(response, json_file, indent=4)
 
 os.remove(first_pdf_path)
-os.remove(os.path.join(folder_path, 'loader.txt'))
 subprocess.run(['python3', format_json_path])
