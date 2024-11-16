@@ -55,14 +55,27 @@ chain = RetrievalQA.from_chain_type(llm, retriever=store.as_retriever())
 
 # Prompt to generate MCQs
 prompt = """
-You are given a document, to the best of your ability generate 20 MCQs by yourself related to the text provided by the document.
-Return a response in valid JSON format. Each JSON object should contain the following fields:
-- question_id
-- question_text
-- options (list of options)
-- correct_option_id (the most contextually correct answer)
+You are tasked with creating multiple-choice questions (MCQs) from the text provided in the document. Generate exactly 20 MCQs in a **strict JSON format**. Each MCQ should follow this JSON structure:
 
-Example format of the response that is expected:
+{
+  "question_id": <unique integer>,
+  "question_text": "<question related to the document content>",
+  "options": [
+    {"option_id": 1, "text": "<option 1 text>"},
+    {"option_id": 2, "text": "<option 2 text>"},
+    {"option_id": 3, "text": "<option 3 text>"},
+    {"option_id": 4, "text": "<option 4 text>"}
+  ],
+  "correct_option_id": <integer corresponding to the correct answer>
+}
+
+**Requirements**:
+- Use only this format for each MCQ object, and strictly follow JSON rules.
+- Do **not** include any text outside the JSON structure.
+- Output all JSON objects in a single JSON array, in one line, without any additional comments or explanations.
+- Ensure the output is syntactically valid JSON.
+
+**Example**:
 [
   {
     "question_id": 1,
@@ -85,11 +98,12 @@ Example format of the response that is expected:
       {"option_id": 4, "text": "Saturn"}
     ],
     "correct_option_id": 2
-  },
+  }
 ]
-Strictly adhere to this format only. Give me the output in a single line, Do not return any other text apart from how the response is expected.
-Return only valid JSON data.
+
+Please generate the MCQs based on the document content and respond **only** with valid JSON, without additional commentary.
 """
+
 
 response = chain.invoke(prompt)
 print("Response generated successfully.")

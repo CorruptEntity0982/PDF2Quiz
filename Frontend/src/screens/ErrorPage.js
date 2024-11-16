@@ -12,7 +12,7 @@ const ErrorPage = () => {
           Looks like you are lost! But don't let that stop you, head back to the
           home page right away!
         </p>
-        <button onClick={() => (window.location.href = "/")}>Go Back</button>
+        <button onClick={() => (window.location.href = "/main")}>Go Back</button>
       </div>
     </div>
   );
