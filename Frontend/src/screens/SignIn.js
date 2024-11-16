@@ -89,7 +89,7 @@ function SignIn() {
                     </div>
                     {errorMessage && <p className="error">{errorMessage}</p>}
                     <button type="submit" className="button">
-                        Login
+                        Log In
                     </button>
                 </form>
             </div>
