@@ -1,0 +1,134 @@
+@font-face {
+    font-family: 'BoldFont';
+    src: url('./fonts/bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'LightFont';
+    src: url('./fonts/light.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'LightFont', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    text-align: center;
+    margin-top: 170px;
+}
+
+.logoText {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #f58220;
+    padding: 0.5rem 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    display: inline-block;
+    letter-spacing: 1.2px;
+    font-family: 'BoldFont', sans-serif;
+    margin-top: -20px;
+}
+
+.card {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    padding: 2rem 2.5rem;
+    width: 400px;
+    background-color: #ffffff;
+    text-align: center;
+    transition: transform 0.3s ease;
+    margin-top: -10px;
+}
+
+.title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 1.5rem;
+    font-family: 'BoldFont', sans-serif;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    margin-top: 1rem;
+}
+
+.inputGroup {
+    text-align: left;
+    font-family: 'LightFont', sans-serif;
+    color: #666;
+}
+
+.label {
+    display: block;
+    margin-bottom: 0.3rem;
+    font-size: 18px;
+    font-weight: bold;
+    color: #666;
+    font-family: 'LightFont', sans-serif;
+    text-align: left;
+}
+
+.input {
+    width: 100%;
+    padding: 0.9rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    outline: none;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+    font-family: 'LightFont', sans-serif;
+    color: #4a4a4a;
+    background-color: #f9f9f9;
+}
+
+.input::placeholder {
+    color: #9a9a9a;
+    font-family: 'LightFont', sans-serif;
+}
+
+.input:focus {
+    border: 1px solid #4a4a4a;
+    box-shadow: 0 0 5px rgba(74, 74, 74, 0.2);
+}
+
+.button {
+    padding: 0.9rem;
+    font-size: 1rem;
+    background-color: #f58220;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-family: 'BoldFont', sans-serif;
+}
+
+.button:hover {
+    background-color: #e16e10;
+    transform: scale(1.03);
+}
+
+.error {
+    color: #d9534f;
+    font-size: 0.9rem;
+    margin-top: -0.5rem;
+    font-family: 'LightFont', sans-serif;
+    text-align: left;
+}

@@ -1,132 +1,100 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import './signin.css';
 
 function SignIn() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const navigate = useNavigate(); // Hook for navigation
+    const [errorMessage, setErrorMessage] = useState('');
+    const navigate = useNavigate();
+
+    const users = [
+        { name: 'Aryan Khatri', email: 'khatriaryan791@gmail.com', password: '123456' },
+        { name: 'Shashank', email: 'shashank@google.com', password: '123' },
+        { name: 'Sir', email: 'sir@google.com', password: '12345' },
+        { name: 'Niko', email: 'niko@google.com', password: '09876' },
+        { name: 'Chahat', email: 'chahat@example.com', password: '098765' },
+    ];
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Add authentication logic here (e.g., API call)
-        console.log('Sign-In Details:', { email, password });
 
-        // Navigate to the PDFUpload page after a successful sign-in
-        navigate('/main');
+        if (!emailRegex.test(email)) {
+            setErrorMessage(
+                <span style={{ fontFamily: 'LightFont', fontSize: '16px' }}>
+                    The email format is invalid. Please enter a valid email.
+                </span>
+            );
+            return;
+        }
+
+        const user = users.find((user) => user.email === email);
+
+        if (!user) {
+            setErrorMessage(
+                <span style={{ fontFamily: 'LightFont', fontSize: '17px' }}>
+                    The email is not registered. Please register your email.
+                </span>
+            );
+        } else if (user.password !== password) {
+            setErrorMessage(
+                <span style={{ fontFamily: 'LightFont', fontSize: '17px' }}>
+                    The password is incorrect. Please check your password.
+                </span>
+            );
+        } else {
+            setErrorMessage('');
+            console.log('Sign-In Successful:', user);
+            navigate('/main');
+        }
     };
 
     return (
-        <div style={styles.container}>
-            <div style={styles.card}>
-                <h1 style={styles.logo}>PDF2Quiz</h1>
-                <h2 style={styles.title}>Create new account</h2>
-                
-                <form onSubmit={handleSubmit} style={styles.form}>
-                    <div style={styles.inputGroup}>
-                        <input
-                            type="text"
-                            placeholder="Name"
-                            required
-                            style={styles.input}
-                        />
-                    </div>
-                    <div style={styles.inputGroup}>
+        <div className="container">
+            <div className="logoText">
+                PDF<span style={{ color: '#000000', fontSize: '50px' }}>2</span>Quiz
+            </div>
+            <div className="card">
+                <h2 className="title">Sign In</h2>
+                <form onSubmit={handleSubmit} className="form">
+                    <div className="inputGroup">
+                        <label htmlFor="email" className="label">
+                            Email Address
+                        </label>
                         <input
                             type="email"
-                            placeholder="Email"
+                            name="email"
+                            placeholder="Username@gmail.com"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                             required
-                            style={styles.input}
+                            className="input"
                         />
                     </div>
-                    <div style={styles.inputGroup}>
+                    <div className="inputGroup">
+                        <label htmlFor="password" className="label">
+                            Password
+                        </label>
                         <input
                             type="password"
-                            placeholder="Password"
+                            name="password"
+                            placeholder="············"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                             required
-                            style={styles.input}
+                            className="input"
                         />
                     </div>
-                    <button type="submit" style={styles.button}>Sign Up</button>
+                    {errorMessage && <p className="error">{errorMessage}</p>}
+                    <button type="submit" className="button">
+                        Login
+                    </button>
                 </form>
             </div>
         </div>
     );
 }
-
-const styles = {
-    container: {
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        minHeight: '100vh',
-        padding: '2rem',
-    },
-    card: {
-        borderRadius: '10px',
-        boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
-        padding: '5.5rem',
-        maxWidth: '600px',
-        width: '100%',
-        textAlign: 'center',
-        backgroundColor: '#FFD580', 
-    },
-    logo: {
-        fontSize: '2rem',
-        fontWeight: 'bold',
-        color: '#FFFFFF', // White color for "PDF2Quiz"
-        marginBottom: '1rem',
-    },
-    title: {
-        marginBottom: '1.5rem',
-        fontSize: '1.4rem',
-        fontWeight: '600',
-        color: '#333',
-    },
-    form: {
-        display: 'flex',
-        flexDirection: 'column',
-        marginBottom: '1.5rem',
-    },
-    inputGroup: {
-        marginBottom: '1rem',
-    },
-    input: {
-        width: '100%',
-        padding: '0.75rem',
-        fontSize: '1rem',
-        borderRadius: '4px',
-        border: '1px solid #ccc',
-        outline: 'none',
-    },
-    button: {
-        padding: '0.75rem',
-        fontSize: '1rem',
-        backgroundColor: '#000000', // Black background for buttons
-        color: '#FFFFFF', // White text for buttons
-        border: 'none',
-        borderRadius: '4px',
-        cursor: 'pointer',
-        fontWeight: '600',
-        marginTop: '1rem',
-    },
-    footerText: {
-        fontSize: '0.9rem',
-        color: '#666',
-    },
-    link: {
-        color: '#e3342f',
-        textDecoration: 'none',
-        fontWeight: '600',
-    },
-    termsText: {
-        fontSize: '0.75rem',
-        color: '#999',
-        marginTop: '1rem',
-    },
-};
 
 export default SignIn;
