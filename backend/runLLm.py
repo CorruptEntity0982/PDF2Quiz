@@ -6,7 +6,7 @@ from langchain_community.document_loaders import PyPDFLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_openai.embeddings import OpenAIEmbeddings
 from langchain_community.vectorstores import Chroma
-from langchain_community.chat_models import ChatOpenAI
+from langchain_openai import ChatOpenAI
 from langchain.chains import RetrievalQA
 
 # Load environment variables
@@ -55,7 +55,7 @@ chain = RetrievalQA.from_chain_type(llm, retriever=store.as_retriever())
 
 # Prompt to generate MCQs
 prompt = """
-You are tasked with creating multiple-choice questions (MCQs) from the text provided in the document. Generate exactly 20 MCQs in a **strict JSON format**. Each MCQ should follow this JSON structure:
+You are tasked with creating multiple-choice questions (MCQs) from the text provided in the document. Generate exactly 5 MCQs in a **strict JSON format**. Each MCQ should follow this JSON structure:
 
 {
   "question_id": <unique integer>,
@@ -106,7 +106,7 @@ Please generate the MCQs based on the document content and respond **only** with
 
 
 response = chain.invoke(prompt)
-print("Response generated successfully.")
+print(response)
 with open(response_json_path, 'w') as json_file:
     json.dump(response, json_file, indent=4)
 
