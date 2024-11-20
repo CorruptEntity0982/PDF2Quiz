@@ -1,0 +1,233 @@
+[
+    {
+      "question_id": 1,
+      "question_text": "What does DBMS stand for?",
+      "options": [
+        {
+          "option_id": 1,
+          "text": "Database Managed System"
+        },
+        {
+          "option_id": 2,
+          "text": "Database Management System"
+        },
+        {
+          "option_id": 3,
+          "text": "Data Backup Management System"
+        },
+        {
+          "option_id": 4,
+          "text": "Dynamic Backup Management System"
+        }
+      ],
+      "correct_option_id": 2
+    },
+    {
+      "question_id": 2,
+      "question_text": "Which type of DBMS uses relationships between tables to manage data?",
+      "options": [
+        {
+          "option_id": 1,
+          "text": "Hierarchical DBMS"
+        },
+        {
+          "option_id": 2,
+          "text": "Relational DBMS"
+        },
+        {
+          "option_id": 3,
+          "text": "Network DBMS"
+        },
+        {
+          "option_id": 4,
+          "text": "Object-oriented DBMS"
+        }
+      ],
+      "correct_option_id": 2
+    },
+    {
+      "question_id": 3,
+      "question_text": "What is the primary language used for querying and managing data in a DBMS?",
+      "options": [
+        {
+          "option_id": 1,
+          "text": "Python"
+        },
+        {
+          "option_id": 2,
+          "text": "SQL"
+        },
+        {
+          "option_id": 3,
+          "text": "Java"
+        },
+        {
+          "option_id": 4,
+          "text": "C++"
+        }
+      ],
+      "correct_option_id": 2
+    },
+    {
+      "question_id": 4,
+      "question_text": "What does ACID stand for in the context of DBMS?",
+      "options": [
+        {
+          "option_id": 1,
+          "text": "Atomicity, Consistency, Isolation, Durability"
+        },
+        {
+          "option_id": 2,
+          "text": "Automation, Clustering, Integrity, Dependency"
+        },
+        {
+          "option_id": 3,
+          "text": "Allocation, Constraints, Input, Data"
+        },
+        {
+          "option_id": 4,
+          "text": "Accessibility, Clarity, Interaction, Durability"
+        }
+      ],
+      "correct_option_id": 1
+    },
+    {
+      "question_id": 5,
+      "question_text": "Which of the following is an example of a relational database?",
+      "options": [
+        {
+          "option_id": 1,
+          "text": "MongoDB"
+        },
+        {
+          "option_id": 2,
+          "text": "Oracle DB"
+        },
+        {
+          "option_id": 3,
+          "text": "Neo4j"
+        },
+        {
+          "option_id": 4,
+          "text": "Firebase"
+        }
+      ],
+      "correct_option_id": 2
+    },
+    {
+      "question_id": 6,
+      "question_text": "Which SQL command is used to retrieve data from a database?",
+      "options": [
+        {
+          "option_id": 1,
+          "text": "INSERT"
+        },
+        {
+          "option_id": 2,
+          "text": "UPDATE"
+        },
+        {
+          "option_id": 3,
+          "text": "SELECT"
+        },
+        {
+          "option_id": 4,
+          "text": "DELETE"
+        }
+      ],
+      "correct_option_id": 3
+    },
+    {
+      "question_id": 7,
+      "question_text": "What is a primary key in a database table?",
+      "options": [
+        {
+          "option_id": 1,
+          "text": "A key used to unlock the database"
+        },
+        {
+          "option_id": 2,
+          "text": "A unique identifier for each record in a table"
+        },
+        {
+          "option_id": 3,
+          "text": "A key that allows duplicate values"
+        },
+        {
+          "option_id": 4,
+          "text": "A foreign key in another table"
+        }
+      ],
+      "correct_option_id": 2
+    },
+    {
+      "question_id": 8,
+      "question_text": "Which of the following is a NoSQL database?",
+      "options": [
+        {
+          "option_id": 1,
+          "text": "MySQL"
+        },
+        {
+          "option_id": 2,
+          "text": "PostgreSQL"
+        },
+        {
+          "option_id": 3,
+          "text": "MongoDB"
+        },
+        {
+          "option_id": 4,
+          "text": "SQLite"
+        }
+      ],
+      "correct_option_id": 3
+    },
+    {
+      "question_id": 9,
+      "question_text": "What is a foreign key used for in a relational database?",
+      "options": [
+        {
+          "option_id": 1,
+          "text": "To uniquely identify each record in a table"
+        },
+        {
+          "option_id": 2,
+          "text": "To establish a link between two tables"
+        },
+        {
+          "option_id": 3,
+          "text": "To index data for faster retrieval"
+        },
+        {
+          "option_id": 4,
+          "text": "To store backup data"
+        }
+      ],
+      "correct_option_id": 2
+    },
+    {
+      "question_id": 10,
+      "question_text": "Which type of join in SQL combines all records from two tables?",
+      "options": [
+        {
+          "option_id": 1,
+          "text": "INNER JOIN"
+        },
+        {
+          "option_id": 2,
+          "text": "LEFT JOIN"
+        },
+        {
+          "option_id": 3,
+          "text": "RIGHT JOIN"
+        },
+        {
+          "option_id": 4,
+          "text": "FULL OUTER JOIN"
+        }
+      ],
+      "correct_option_id": 4
+    }
+]
+  

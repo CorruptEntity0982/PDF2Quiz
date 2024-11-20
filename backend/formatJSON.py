@@ -18,7 +18,7 @@ try:
 
 except json.JSONDecodeError as e:
     Fail_count = True
-    print("Error at parsing, display error page:", e)
+    #print("Error at parsing, display error page:", e)
     formatted_json = {'message': 'failed'}
 
 with open(output_file_path, 'w') as file:

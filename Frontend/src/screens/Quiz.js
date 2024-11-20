@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
-import rawQuestionsData from "../response/formattedQuestions.json";
+//import rawQuestionsData from "../response/formquiz.json";
+//import rawQuestionsData from "../response/dbms.json";
+import rawQuestionsData from "../response/ai.json";
 import defaultQuestionsData from "../components/questions.json";
 import { MdCheckCircle } from "react-icons/md";
 import { useNavigate } from "react-router-dom";

@@ -1,0 +1,233 @@
+[
+    {
+      "question_id": 1,
+      "question_text": "Which type of AI is the most widely used in the world?",
+      "options": [
+        {
+          "option_id": 1,
+          "text": "General AI"
+        },
+        {
+          "option_id": 2,
+          "text": "Strong AI"
+        },
+        {
+          "option_id": 3,
+          "text": "Weak or Narrow AI"
+        },
+        {
+          "option_id": 4,
+          "text": "Self-aware AI"
+        }
+      ],
+      "correct_option_id": 3
+    },
+    {
+      "question_id": 2,
+      "question_text": "Which subset of AI focuses on multilayer neural networks?",
+      "options": [
+        {
+          "option_id": 1,
+          "text": "Natural Language Processing"
+        },
+        {
+          "option_id": 2,
+          "text": "Robotics"
+        },
+        {
+          "option_id": 3,
+          "text": "Deep Learning"
+        },
+        {
+          "option_id": 4,
+          "text": "Expert Systems"
+        }
+      ],
+      "correct_option_id": 3
+    },
+    {
+      "question_id": 3,
+      "question_text": "What is the function of reactive machines in AI?",
+      "options": [
+        {
+          "option_id": 1,
+          "text": "Store past experiences"
+        },
+        {
+          "option_id": 2,
+          "text": "Understand human emotions"
+        },
+        {
+          "option_id": 3,
+          "text": "Process predefined datasets"
+        },
+        {
+          "option_id": 4,
+          "text": "Learn from mistakes"
+        }
+      ],
+      "correct_option_id": 3
+    },
+    {
+      "question_id": 4,
+      "question_text": "What are Convolutional Neural Networks primarily used for?",
+      "options": [
+        {
+          "option_id": 1,
+          "text": "Managing medical records"
+        },
+        {
+          "option_id": 2,
+          "text": "Image recognition and feature extraction"
+        },
+        {
+          "option_id": 3,
+          "text": "Automated decision making"
+        },
+        {
+          "option_id": 4,
+          "text": "Emotional intelligence simulation"
+        }
+      ],
+      "correct_option_id": 2
+    },
+    {
+      "question_id": 5,
+      "question_text": "Which AI subset includes supervised and unsupervised learning?",
+      "options": [
+        {
+          "option_id": 1,
+          "text": "Natural Language Processing"
+        },
+        {
+          "option_id": 2,
+          "text": "Machine Learning"
+        },
+        {
+          "option_id": 3,
+          "text": "Robotics"
+        },
+        {
+          "option_id": 4,
+          "text": "Fuzzy Logic"
+        }
+      ],
+      "correct_option_id": 2
+    },
+    {
+        "question_id": 6,
+        "question_text": "What is the primary purpose of artificial intelligence in healthcare?",
+        "options": [
+          {
+            "option_id": 1,
+            "text": "To replace doctors"
+          },
+          {
+            "option_id": 2,
+            "text": "To assist in diagnosis and treatment"
+          },
+          {
+            "option_id": 3,
+            "text": "To develop new medical devices"
+          },
+          {
+            "option_id": 4,
+            "text": "To eliminate human intervention"
+          }
+        ],
+        "correct_option_id": 2
+      },
+      {
+        "question_id": 7,
+        "question_text": "Which of the following is an example of weak AI?",
+        "options": [
+          {
+            "option_id": 1,
+            "text": "Self-driving cars"
+          },
+          {
+            "option_id": 2,
+            "text": "Apple’s Siri"
+          },
+          {
+            "option_id": 3,
+            "text": "Humanoid robots"
+          },
+          {
+            "option_id": 4,
+            "text": "Machines with self-awareness"
+          }
+        ],
+        "correct_option_id": 2
+      },
+      {
+        "question_id": 8,
+        "question_text": "What is the key advantage of reinforcement learning in AI?",
+        "options": [
+          {
+            "option_id": 1,
+            "text": "It uses labeled data for training"
+          },
+          {
+            "option_id": 2,
+            "text": "It trains without a supervisor"
+          },
+          {
+            "option_id": 3,
+            "text": "It learns from rewards and penalties"
+          },
+          {
+            "option_id": 4,
+            "text": "It stores and uses past experiences"
+          }
+        ],
+        "correct_option_id": 3
+      },
+      {
+        "question_id": 9,
+        "question_text": "What is the role of Natural Language Processing in AI?",
+        "options": [
+          {
+            "option_id": 1,
+            "text": "To simulate human emotions"
+          },
+          {
+            "option_id": 2,
+            "text": "To mimic human thinking processes"
+          },
+          {
+            "option_id": 3,
+            "text": "To bridge communication between humans and machines"
+          },
+          {
+            "option_id": 4,
+            "text": "To recognize images and patterns"
+          }
+        ],
+        "correct_option_id": 3
+      },
+      {
+        "question_id": 10,
+        "question_text": "Which type of AI is capable of surpassing human intelligence?",
+        "options": [
+          {
+            "option_id": 1,
+            "text": "General AI"
+          },
+          {
+            "option_id": 2,
+            "text": "Reactive AI"
+          },
+          {
+            "option_id": 3,
+            "text": "Strong AI"
+          },
+          {
+            "option_id": 4,
+            "text": "Limited Memory AI"
+          }
+        ],
+        "correct_option_id": 3
+      }
+  ]
+  
